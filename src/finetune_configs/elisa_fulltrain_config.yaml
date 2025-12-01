@@ -1,0 +1,42 @@
+# Data / preprocessing (must match the pretrained model)
+kmer_size: 3   
+pretrain_num_classes: 6   
+max_seq_length: 2048   
+# Model architecture
+embedding_dim: 64  # must match the pretrained model
+num_heads: 8  # must match the pretrained model
+num_layers: 2  # must match the pretrained model
+hidden_dim: 192  # must match the pretrained model
+dropout_rate: 0.1
+hidden_dim_for_binary_classifier: 64
+# Training hyperparameters
+batch_size: 8
+learning_rate: 5e-5
+num_epochs: 52  # Median of optimal epoch counts across CV folds
+use_class_weights: False
+weight_decay: 1e-3
+max_grad_norm: 1.0
+# LR scheduling
+start_factor: 0.01
+end_factor: 1.0
+warmup_epochs: 5
+lr_min: 3e-5
+cosine_cycle_epochs: 50
+# OOF pooled Bootstrap for final metrics
+n_boot: 500
+# Device 
+device: "cuda:7"  # or "cpu"
+# DataLoader workers
+num_workers: 0
+# Seed  
+seed: 42
+# Paths for pretrain checkpoint, kmer vocab and finetune fasta
+pretrained_ckpt_path: "pretrain_save_20251030_1727/pretrained_best_model_epoch44.pth"
+pretrained_kmer_json: "pretrain_save_20251030_1727/pretrained_kmer_to_idx.json"
+finetune_combined_fasta: "../data/preprocessed/finetune/elisa_splits/elisa_finetune_trainval_set.fasta"
+reference_fasta: "../data/raw/finetune/VZV-P01.fasta"
+# Label type
+label: "elisa"
+
+#### command line to run elisa_fulltrain
+# python finetune_fulltrain.py --config finetune_configs/elisa_fulltrain_config.yaml

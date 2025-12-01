@@ -1,0 +1,32 @@
+# Data / preprocessing (must match the pretrained model)
+kmer_size: 3   
+pretrain_num_classes: 6   
+max_seq_length: 2048   
+# Model architecture
+embedding_dim: 64  # must match the pretrained model
+num_heads: 8  # must match the pretrained model
+num_layers: 2  # must match the pretrained model
+hidden_dim: 192  # must match the pretrained model
+dropout_rate: 0.2
+hidden_dim_for_binary_classifier: 64
+# Batch size
+batch_size: 8
+# Bootstrap for final metrics
+n_boot: 500
+# Device 
+device: "cuda:6"  # or "cpu"
+# DataLoader workers
+num_workers: 0
+# Seed  
+seed: 42
+# Paths for fulltrained checkpoint, kmer vocab, label encoder class, test fasta and reference fasta
+fulltrained_ckpt_path: "wb_fulltrain_save_20251110_1317/final_model.pth"
+fulltrained_kmer_json: "wb_fulltrain_save_20251110_1317/kmer_to_idx.json"
+fulltrained_le_classes_path: "wb_fulltrain_save_20251110_1317/label_encoder_classes.json"
+finetune_test_fasta: "../data/preprocessed/finetune/wb_splits/wb_finetune_test_set.fasta"
+reference_fasta: "../data/raw/finetune/VZV-P01.fasta"
+# Label type
+label: "wb"
+
+#### command line to run wb_test
+# python finetune_test.py --config finetune_configs/wb_test_config.yaml
