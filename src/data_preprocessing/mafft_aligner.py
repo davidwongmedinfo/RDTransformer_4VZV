@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Beijing Youcare Kechuang Pharmaceutical Technology Co. Ltd., All rights reserved.
+# Author: Dawei Wang
+# This code may not be used, modified, or distributed without prior written consent from Beijing Youcare Kechuang Pharmaceutical Technology Co. Ltd.
+
 import tempfile
 import subprocess
 import shutil

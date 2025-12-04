@@ -20,9 +20,9 @@ num_workers: 0
 # Seed  
 seed: 42
 # Paths for fulltrained checkpoint, kmer vocab, label encoder class, test fasta and reference fasta
-fulltrained_ckpt_path: "elisa_fulltrain_save_20251110_1340/final_model.pth"
-fulltrained_kmer_json: "elisa_fulltrain_save_20251110_1340/kmer_to_idx.json"
-fulltrained_le_classes_path: "elisa_fulltrain_save_20251110_1340/label_encoder_classes.json"
+fulltrained_ckpt_path: "elisa_fulltrain_save_20251110_1337/final_model.pth"
+fulltrained_kmer_json: "elisa_fulltrain_save_20251110_1337/kmer_to_idx.json"
+fulltrained_le_classes_path: "elisa_fulltrain_save_20251110_1337/label_encoder_classes.json"
 finetune_test_fasta: "../data/preprocessed/finetune/elisa_splits/elisa_finetune_test_set.fasta"
 reference_fasta: "../data/raw/finetune/VZV-P01.fasta"
 # Label type
